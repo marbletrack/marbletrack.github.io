@@ -15,15 +15,12 @@ jobs:
         uses: cicirello/generate-sitemap@v1
         with:
           base-url-path: https://marbletrack.github.io
-      - name: Move sitemap.xml
-        run: |
-          mv sitemap.xml sitemap/index.xml
       - name: Commit and push
         run: |
           git config user.name github-actions
           git config user.email github-actions@github.com
-          git add sitemap/index.xml
-          if [ -n "$(git status --porcelain sitemap/index.xml)" ]; then
+          git add sitemap.xml
+          if [ -n "$(git status --porcelain sitemap.xml)" ]; then
             git commit -m "Automated sitemap update"
             git push
           else
