@@ -27,5 +27,5 @@ jobs:
             git commit -m "Automated sitemap update"
             git push
           else
-            echo "No reason to commit: no new changes
+            echo "No reason to commit: no new changes"
           fi
